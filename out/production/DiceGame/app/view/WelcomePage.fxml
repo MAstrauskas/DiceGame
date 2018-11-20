@@ -9,31 +9,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="anchorPane" prefHeight="524.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.WelcomePageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.WelcomePageController">
    <children>
-      <FlowPane fx:id="flowPane" prefHeight="426.0" prefWidth="608.0" AnchorPane.topAnchor="20.0">
-         <children>
-            <Text fx:id="welcomeText" lineSpacing="2.0" stroke="#e15454" strokeWidth="0.0" text="Welcome to&#10; Dice with the Mice!" textAlignment="CENTER" wrappingWidth="609.13671875">
-               <font>
-                  <Font name="Comic Sans MS" size="38.0" />
-               </font>
-            </Text>
-            <Text fx:id="instructionsText" strokeType="OUTSIDE" strokeWidth="0.0" text="&#10;Instructions&#10;&#10;1. It's a 2 player game&#10;2. Each turn the dice will be rolled 3 times&#10;3. If you get a pair, your score becomes the sum of that pair&#10;4.  If you roll 3 same numbers, your score becomes 18&#10;5. Otherwise, you get one point&#10;6. To win, you have to score 18 or more points&#10;7. If both players score above 18 points, it's a draw&#10;8. Good luck!&#10;" textAlignment="CENTER" wrappingWidth="608.13671875">
-               <font>
-                  <Font name="Comic Sans MS" size="19.0" />
-               </font>
-            </Text>
-         </children>
-      </FlowPane>
-      <Pane fx:id="buttonPane" layoutX="209.0" layoutY="432.0" prefHeight="124.0" prefWidth="182.0">
-         <children>
-            <Button fx:id="submitButton" contentDisplay="CENTER" layoutX="43.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleNextScene" prefHeight="32.0" prefWidth="97.0" text="Ok, I got it!">
-               <font>
-                  <Font name="Comic Sans MS" size="12.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
+      <Text layoutX="143.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to&#10; Dice with the Mice!" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="32.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnSubmit" layoutX="247.0" layoutY="263.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="33.0" prefWidth="90.0" text="Begin!">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></Button>
    </children>
-</AnchorPane>
+</Pane>

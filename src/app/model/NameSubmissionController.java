@@ -7,9 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,42 +15,45 @@ import java.io.IOException;
 import app.domain.Player;
 
 public class NameSubmissionController {
-    public Player p1;
+    public Player player1;
+    public Player player2;
 
     @FXML
-    private TextField textField_pName;
+    private TextField playerName1;
 
     @FXML
-    private Label pName;
+    private TextField playerName2;
 
-    @FXML
-    private Pane mainPane;
 
     @FXML
     private Button btnSubmit;
 
     @FXML
     void onSubmitClicked(ActionEvent event) {
-        p1 = new Player(textField_pName.getText());
-        String name = textField_pName.getText();
+        player1 = new Player(playerName1.getText());
+        String pName1 = playerName1.getText();
+
+        player2 = new Player(playerName2.getText());
+        String pName2 = playerName2.getText();
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("Signup Successful!");
+        alert.setContentText("Sign up Successful!");
         alert.showAndWait();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DicePage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/DicePage.fxml"));
 
         try {
             Parent root = (Parent) loader.load();
             DicePageController sc = loader.getController();
-            sc.setText(name);
+            sc.setText(pName1);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

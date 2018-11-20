@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 
-public class WelcomePageController {
+public class InstructionController {
 
     @FXML
     private Button btnSubmit;
@@ -15,7 +15,7 @@ public class WelcomePageController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/MainMenuPage.fxml"));
 
         MainMenuController.Loader(loader);
-    }
 
+    }
 }
 
