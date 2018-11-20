@@ -1,5 +1,6 @@
 package app.model;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +39,7 @@ public class MainMenuController {
 
     @FXML
     void onExitClicked(ActionEvent event) {
-
+        Platform.exit();
     }
 
     static void Loader(FXMLLoader loader) {

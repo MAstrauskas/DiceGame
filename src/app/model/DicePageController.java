@@ -12,6 +12,7 @@ import app.domain.Dice;
 import app.domain.Player;
 
 public class DicePageController {
+    private final int MAX_SCORE = 50;
     private Dice dice;
     private Player p1;
     private int score;
