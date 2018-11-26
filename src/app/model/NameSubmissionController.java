@@ -30,29 +30,43 @@ public class NameSubmissionController {
 
     @FXML
     void onSubmitClicked(ActionEvent event) {
-        player1 = new Player(playerName1.getText());
-        String pName1 = playerName1.getText();
 
-        player2 = new Player(playerName2.getText());
-        String pName2 = playerName2.getText();
+        // If a name is blank or contains anything, but letters, show an error
+        if ((playerName1.getText().isEmpty() || playerName2.getText().isEmpty())
+                || (!playerName1.getText().matches("[a-zA-Z]+") || !playerName2.getText().matches("[a-zA-Z]+"))) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Name error");
+            errorAlert.setHeaderText("Name required.");
+            errorAlert.setContentText("Name cannot be blank and must contain letters. Please enter a valid name.");
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("Sign up Successful!");
-        alert.showAndWait();
+            errorAlert.showAndWait();
+        } else {
+            player1 = new Player(playerName1.getText());
+            player2 = new Player(playerName2.getText());
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/DicePage.fxml"));
 
-        try {
-            Parent root = (Parent) loader.load();
-            DicePageController sc = loader.getController();
-            sc.setText(pName1);
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+            String pName1 = playerName1.getText();
+            String pName2 = playerName2.getText();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Sign up Successful!");
+            alert.showAndWait();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/DicePage.fxml"));
+
+            try {
+                Parent root = (Parent) loader.load();
+                DicePageController sc = loader.getController();
+                sc.setPlayerOneText(pName1);
+                sc.setPlayerTwoText(pName2);
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
