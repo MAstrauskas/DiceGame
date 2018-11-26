@@ -11,7 +11,7 @@
     <top>
         <Pane prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="playerTurn" alignment="CENTER" prefHeight="80.0" prefWidth="600.0" text="" textAlignment="CENTER">
+                <Label fx:id="playerTurn" alignment="CENTER" prefHeight="80.0" prefWidth="600.0" text="Player One,&#10;press the button to start!" textAlignment="CENTER">
                     <font>
                         <Font name="Comic Sans MS" size="24.0" />
                     </font>
@@ -43,12 +43,12 @@
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="p1_currentScore" layoutX="62.0" layoutY="46.0" text="Label">
+                        <Label fx:id="p1_currentScore" alignment="CENTER" layoutX="62.0" layoutY="46.0" textAlignment="CENTER">
                             <font>
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="p1_totalScore" layoutX="62.0" layoutY="116.0" text="Label">
+                        <Label fx:id="p1_totalScore" alignment="CENTER" layoutX="62.0" layoutY="116.0" textAlignment="CENTER">
                             <font>
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>
@@ -84,12 +84,12 @@
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="p2_currentScore" layoutX="60.0" layoutY="46.0" text="Label">
+                        <Label fx:id="p2_currentScore" alignment="CENTER" layoutX="60.0" layoutY="46.0" text="0" textAlignment="CENTER">
                             <font>
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="p2_totalScore" layoutX="62.0" layoutY="117.0" text="Label">
+                        <Label fx:id="p2_totalScore" alignment="CENTER" layoutX="62.0" layoutY="117.0" text="0">
                             <font>
                                 <Font name="Comic Sans MS" size="14.0" />
                             </font>

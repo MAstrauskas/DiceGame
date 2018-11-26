@@ -72,19 +72,18 @@ public class DicePageController {
     void rollButtonClicked(ActionEvent event) {
         listView.getItems().clear();
         int[] rollDice = new int[3];
-
         checkWinOrDraw();
         if (firstPlayerTurn) {
-            playerTurn.setText(PlayerOne.getText() + ",\n it's your turn!");
             RollDiceAndShowNumbers(rollDice);
             scoreCalculation(rollDice);
             setPlayerScore(p1, p1_currentScore, p1_totalScore);
+            playerTurn.setText(PlayerTwo.getText() + ",\n it's your turn!");
             switchPlayer();
         } else {
-            playerTurn.setText(PlayerTwo.getText() + ",\n it's your turn!");
             RollDiceAndShowNumbers(rollDice);
             scoreCalculation(rollDice);
             setPlayerScore(p2, p2_currentScore, p2_totalScore);
+            playerTurn.setText(PlayerOne.getText() + ",\n it's your turn!");
             switchPlayer();
         }
     }
@@ -138,7 +137,10 @@ public class DicePageController {
     private void checkWinOrDraw() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/WinPage.fxml"));
 
-        if (p1.getScore() >= MAX_SCORE) {
+        if (p1.getScore() > MAX_SCORE && p2.getScore() > MAX_SCORE) {
+            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/app/view/DrawPage.fxml"));
+            MainMenuController.Loader(loader1);
+        } else if (p1.getScore() > MAX_SCORE) {
             try {
                 Parent root = loader.load();
                 WinPageController winPage = loader.getController();
@@ -149,7 +151,7 @@ public class DicePageController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (p2.getScore() >= MAX_SCORE) {
+        } else if (p2.getScore() > MAX_SCORE) {
             try {
                 Parent root = loader.load();
                 WinPageController winPage = loader.getController();
@@ -160,9 +162,6 @@ public class DicePageController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (p1.getScore() == MAX_SCORE && p2.getScore() == MAX_SCORE) {
-            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/app/view/DrawPage.fxml"));
-            MainMenuController.Loader(loader1);
         }
     }
 
