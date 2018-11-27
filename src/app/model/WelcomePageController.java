@@ -1,21 +1,36 @@
 package app.model;
 
+import app.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 
-public class WelcomePageController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class WelcomePageController implements Initializable {
 
     @FXML
-    private Button btnSubmit;
+    private Pane rootPane;
 
     @FXML
-    void onSubmitClicked(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/MainMenuPage.fxml"));
+    public Button btnSubmit;
 
-        MainMenuController.Loader(loader);
+    @FXML
+    void onSubmitClicked(ActionEvent event) throws IOException {
+        Pane pane = FXMLLoader.load(getClass().getResource("/app/view/MainMenuPage.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
 }

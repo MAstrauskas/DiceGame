@@ -3,19 +3,24 @@ package app.model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 import app.domain.Dice;
 import app.domain.Player;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class DicePageController {
+public class DicePageController implements Initializable {
     private final int MAX_SCORE = 50;
     private Dice dice;
     private Player p1;
@@ -31,6 +36,9 @@ public class DicePageController {
         this.p2 = new Player();
         this.wonPlayer = "";
     }
+
+    @FXML
+    private BorderPane rootPane;
 
     @FXML
     private Label p1_currentScore;
@@ -56,6 +64,12 @@ public class DicePageController {
     @FXML
     private Label playerTurn;
 
+    @FXML
+    private Label PlayerOneLeading;
+
+    @FXML
+    private Label PlayerTwoLeading;
+
     /*
      * Each time Player One clicks his/her button,
      * The score is updated
@@ -77,12 +91,14 @@ public class DicePageController {
             RollDiceAndShowNumbers(rollDice);
             scoreCalculation(rollDice);
             setPlayerScore(p1, p1_currentScore, p1_totalScore);
+            leadingPlayer();
             playerTurn.setText(PlayerTwo.getText() + ",\n it's your turn!");
             switchPlayer();
         } else {
             RollDiceAndShowNumbers(rollDice);
             scoreCalculation(rollDice);
             setPlayerScore(p2, p2_currentScore, p2_totalScore);
+            leadingPlayer();
             playerTurn.setText(PlayerOne.getText() + ",\n it's your turn!");
             switchPlayer();
         }
@@ -134,34 +150,51 @@ public class DicePageController {
     /*
      * This method checks who have won or if it's a draw
      */
-    private void checkWinOrDraw() {
+    private void checkWinOrDraw(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/WinPage.fxml"));
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/app/view/DrawPage.fxml"));
 
         if (p1.getScore() > MAX_SCORE && p2.getScore() > MAX_SCORE) {
-            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/app/view/DrawPage.fxml"));
-            MainMenuController.Loader(loader1);
+            // Set Player Names
+            try {
+                Pane pane = loader2.load();
+                DrawPageController drawPage = loader2.getController();
+                drawPage.setPlayerNames(PlayerOne.getText(), PlayerTwo.getText());
+                rootPane.getChildren().setAll(pane);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else if (p1.getScore() > MAX_SCORE) {
             try {
-                Parent root = loader.load();
+                Pane pane = loader.load();
                 WinPageController winPage = loader.getController();
                 winPage.setWinnerName(PlayerOne.getText());
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
+                winPage.setPlayerNames(PlayerOne.getText(), PlayerTwo.getText());
+                rootPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (p2.getScore() > MAX_SCORE) {
             try {
-                Parent root = loader.load();
+                Pane pane = loader.load();
                 WinPageController winPage = loader.getController();
                 winPage.setWinnerName(PlayerTwo.getText());
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
+                winPage.setPlayerNames(PlayerOne.getText(), PlayerTwo.getText());
+                rootPane.getChildren().setAll(pane);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void leadingPlayer() {
+        if(p1.getScore() > p2.getScore()) {
+            PlayerOneLeading.setText("You're ahead!");
+            PlayerTwoLeading.setText("");
+        }
+        else if (p1.getScore() < p2.getScore()) {
+            PlayerTwoLeading.setText("You're ahead!");
+            PlayerOneLeading.setText("");
         }
     }
 
@@ -177,5 +210,9 @@ public class DicePageController {
      */
     public void setPlayerTwoText(String name) {
         PlayerTwo.setText(name);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
     }
 }

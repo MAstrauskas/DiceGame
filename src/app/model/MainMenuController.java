@@ -4,14 +4,21 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainMenuController {
+public class MainMenuController implements Initializable {
+
+    @FXML
+    private Pane rootPane;
 
     @FXML
     private Button btnStart;
@@ -23,22 +30,19 @@ public class MainMenuController {
     private Button btnExit;
 
     @FXML
-    void onStartClicked(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/NameSubmissionPage.fxml"));
-
-        Loader(loader);
+    private void onStartClicked(ActionEvent event) throws IOException {
+        Pane pane = FXMLLoader.load(getClass().getResource("/app/view/NameSubmissionPage.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void onInstructionClicked(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/InstructionPage.fxml"));
-
-        Loader(loader);
-
+    private void onInstructionClicked(ActionEvent event) throws IOException {
+        Pane pane = FXMLLoader.load(getClass().getResource("/app/view/InstructionPage.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void onExitClicked(ActionEvent event) {
+    private void onExitClicked(ActionEvent event) {
         Platform.exit();
     }
 
@@ -51,5 +55,9 @@ public class MainMenuController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
     }
 }
