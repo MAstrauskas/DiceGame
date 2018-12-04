@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.MainMenuController">
+   <children>
+      <Text layoutX="222.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu">
+         <font>
+            <Font name="Comic Sans MS" size="32.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnStart" layoutX="232.0" layoutY="116.0" mnemonicParsing="false" onAction="#onStartClicked" prefHeight="45.0" prefWidth="135.0" text="Start">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnInstruction" layoutX="233.0" layoutY="200.0" mnemonicParsing="false" onAction="#onInstructionClicked" prefHeight="45.0" prefWidth="135.0" text="Instructions">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnExit" layoutX="232.0" layoutY="284.0" mnemonicParsing="false" onAction="#onExitClicked" prefHeight="45.0" prefWidth="135.0" text="Exit">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

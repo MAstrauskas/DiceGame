@@ -7,21 +7,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.WinPageController">
+<FlowPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.WinPageController">
    <children>
       <Pane prefHeight="401.0" prefWidth="601.0">
          <children>
-            <Label fx:id="winner" alignment="CENTER" layoutX="71.0" layoutY="13.0" prefHeight="254.0" prefWidth="471.0" text="test" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <Label fx:id="winner" alignment="CENTER" layoutX="71.0" layoutY="13.0" prefHeight="254.0" prefWidth="471.0" style="-fx-font-family: Righteous; -fx-font-size: 48.0" text="test" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font name="Comic Sans MS" size="48.0" />
                </font>
             </Label>
-            <Button fx:id="btn_playAgain" layoutX="104.0" layoutY="268.0" mnemonicParsing="false" onAction="#onPlayAgainClicked" prefHeight="63.0" prefWidth="155.0" text="Play again">
+            <Button fx:id="btn_playAgain" layoutX="104.0" layoutY="268.0" mnemonicParsing="false" onAction="#onPlayAgainClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;" text="Play again" textFill="#150e5c">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btn_mainMenu" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" onAction="#onMainMenuClicked" prefHeight="63.0" prefWidth="155.0" text="Main menu">
+            <Button fx:id="btn_mainMenu" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" onAction="#onMainMenuClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;" text="Main menu" textFill="#150e5c">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>

@@ -3,22 +3,15 @@ package app.model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import app.domain.Player;
 
-public class NameSubmissionController implements Initializable {
+public class NameSubmissionController {
     public Player player1;
     public Player player2;
 
@@ -31,12 +24,11 @@ public class NameSubmissionController implements Initializable {
     @FXML
     public TextField playerName2;
 
+    /*
+     * Starts the game
+     */
     @FXML
-    private Button btnSubmit;
-
-    @FXML
-    private void onSubmitClicked(ActionEvent event) {
-
+    public void onSubmitClicked(ActionEvent event) {
         // If a name is blank or contains anything, but letters, show an error
         if ((playerName1.getText().isEmpty() || playerName2.getText().isEmpty())
                 || (!playerName1.getText().matches("[a-zA-Z]+") || !playerName2.getText().matches("[a-zA-Z]+"))) {
@@ -48,12 +40,20 @@ public class NameSubmissionController implements Initializable {
             String pName1 = playerName1.getText();
             String pName2 = playerName2.getText();
 
-            showInformationAlert();
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/view/DicePage.fxml"));
             changeSceneAndSetPlayerNames(pName1, pName2, loader, rootPane);
         }
     }
+
+    /*
+     * Goes back to the Main Menu
+     */
+    @FXML
+    private void onBackClicked(ActionEvent event) throws IOException {
+        Pane pane = FXMLLoader.load(getClass().getResource("/app/view/MainMenuPage.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+
 
     public static void changeSceneAndSetPlayerNames(String pName1, String pName2, FXMLLoader loader, Pane rootPane) {
         try {
@@ -67,24 +67,12 @@ public class NameSubmissionController implements Initializable {
         }
     }
 
-    public void showErrorAlert() {
+    private void showErrorAlert() {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setTitle("Name error");
         errorAlert.setHeaderText("Name required.");
         errorAlert.setContentText("Name cannot be blank and must contain letters. Please enter a valid name.");
 
         errorAlert.showAndWait();
-    }
-
-    public void showInformationAlert() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("Sign up Successful!");
-        alert.showAndWait();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
     }
 }
