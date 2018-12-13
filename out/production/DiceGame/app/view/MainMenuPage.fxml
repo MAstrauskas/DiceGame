@@ -16,17 +16,17 @@
             <Font name="Comic Sans MS" size="32.0" />
          </font>
       </Text>
-      <Button fx:id="btnStart" layoutX="232.0" layoutY="116.0" mnemonicParsing="false" onAction="#onStartClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0" text="Start" textFill="#150e5c">
+      <Button fx:id="btnStart" layoutX="232.0" layoutY="116.0" mnemonicParsing="false" onAction="#onStartClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0;  -fx-skin: 'app.domain.MyButtonSkin';" text="Start" textFill="#150e5c">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnInstruction" layoutX="233.0" layoutY="200.0" mnemonicParsing="false" onAction="#onInstructionClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0" text="Instructions" textFill="#150e5c">
+      <Button fx:id="btnInstruction" layoutX="233.0" layoutY="200.0" mnemonicParsing="false" onAction="#onInstructionClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0;  -fx-skin: 'app.domain.MyButtonSkin';" text="Instructions" textFill="#150e5c">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnExit" layoutX="232.0" layoutY="284.0" mnemonicParsing="false" onAction="#onExitClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0" text="Exit" textFill="#150e5c">
+      <Button fx:id="btnExit" layoutX="232.0" layoutY="284.0" mnemonicParsing="false" onAction="#onExitClicked" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0;  -fx-skin: 'app.domain.MyButtonSkin';" text="Exit" textFill="#150e5c">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>

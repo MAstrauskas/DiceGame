@@ -23,26 +23,16 @@
     <center>
         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <ListView fx:id="listView" fixedCellSize="-20.0" layoutX="103.0" layoutY="44.0" orientation="HORIZONTAL" prefHeight="31.0" prefWidth="75.0" style="-fx-background-size: 20; -fx-font-family: Righteous; -fx-background-color: #ffba1a;" />
-                <Button fx:id="rollButton" layoutX="95.0" layoutY="250.0" mnemonicParsing="false" onAction="#rollButtonClicked" prefHeight="43.0" prefWidth="91.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;" text="Roll!" textFill="#150e5c">
+                <Button fx:id="rollButton" layoutX="95.0" layoutY="250.0" mnemonicParsing="false" onAction="#rollButtonClicked" prefHeight="43.0" prefWidth="91.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a; -fx-skin: 'app.domain.MyButtonSkin';" text="Roll!" textFill="#150e5c">
                     <font>
                         <Font name="Comic Sans MS" size="18.0" />
                     </font>
                 </Button>
-            <ImageView fx:id="diceSide1" fitHeight="53.0" fitWidth="66.0" layoutX="28.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/side0.jpg" />
-               </image>
+            <ImageView fx:id="diceSide1" fitHeight="53.0" fitWidth="66.0" layoutX="37.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
             </ImageView>
-            <ImageView fx:id="diceSide2" fitHeight="53.0" fitWidth="66.0" layoutX="111.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/side0.jpg" />
-               </image>
+            <ImageView fx:id="diceSide2" fitHeight="53.0" fitWidth="66.0" layoutX="119.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
             </ImageView>
-            <ImageView fx:id="diceSide3" fitHeight="53.0" fitWidth="66.0" layoutX="193.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/side0.jpg" />
-               </image>
+            <ImageView fx:id="diceSide3" fitHeight="53.0" fitWidth="66.0" layoutX="197.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
             </ImageView>
             </children>
         </Pane>

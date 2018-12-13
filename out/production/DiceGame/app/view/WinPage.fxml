@@ -11,21 +11,41 @@
    <children>
       <Pane prefHeight="401.0" prefWidth="601.0">
          <children>
-            <Label fx:id="winner" alignment="CENTER" layoutX="71.0" layoutY="13.0" prefHeight="254.0" prefWidth="471.0" style="-fx-font-family: Righteous; -fx-font-size: 48.0" text="test" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+            <Label fx:id="winner" alignment="CENTER" layoutX="71.0" layoutY="13.0" prefHeight="222.0" prefWidth="471.0" style="-fx-font-family: Righteous; -fx-font-size: 48.0" text="test" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font name="Comic Sans MS" size="48.0" />
                </font>
             </Label>
-            <Button fx:id="btn_playAgain" layoutX="104.0" layoutY="268.0" mnemonicParsing="false" onAction="#onPlayAgainClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;" text="Play again" textFill="#150e5c">
+            <Button fx:id="btn_playAgain" layoutX="104.0" layoutY="300.0" mnemonicParsing="false" onAction="#onPlayAgainClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;  -fx-skin: 'app.domain.MyButtonSkin';" text="Play again" textFill="#150e5c">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btn_mainMenu" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" onAction="#onMainMenuClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;" text="Main menu" textFill="#150e5c">
+            <Button fx:id="btn_mainMenu" layoutX="326.0" layoutY="300.0" mnemonicParsing="false" onAction="#onMainMenuClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;  -fx-skin: 'app.domain.MyButtonSkin';" text="Main menu" textFill="#150e5c">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Button>
+            <Label fx:id="winnerNameScore" alignment="CENTER_RIGHT" layoutX="96.0" layoutY="223.0" prefHeight="40.0" prefWidth="205.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="p1 score: " textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="looserNameScore" alignment="CENTER_RIGHT" layoutX="96.0" layoutY="260.0" prefHeight="40.0" prefWidth="205.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="p2 score: " textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="winnerScore" layoutX="307.0" layoutY="223.0" prefHeight="40.0" prefWidth="61.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="score" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="looserScore" layoutX="307.0" layoutY="260.0" prefHeight="40.0" prefWidth="61.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="score" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

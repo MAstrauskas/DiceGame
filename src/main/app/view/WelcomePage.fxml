@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.app.model.WelcomePageController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="693.0" layoutX="-37.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/BackgroundImg.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#ffba1a" layoutX="166.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Righteous" text="Welcome to the&#10;DiceMania!" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnSubmit" layoutX="249.0" layoutY="294.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0;  -fx-skin: 'main.app.domain.MyButtonSkin';" text="Begin!" textFill="#150e5c">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font></Button>
+   </children>
+</Pane>

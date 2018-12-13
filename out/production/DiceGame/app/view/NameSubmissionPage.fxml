@@ -9,6 +9,11 @@
 
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.NameSubmissionController">
    <children>
+      <Text fill="#ffba1a" layoutX="113.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Righteous; -fx-font-size: 32.0" text="Players, enter your names!">
+         <font>
+            <Font name="Comic Sans MS" size="32.0" />
+         </font>
+      </Text>
       <Label fx:id="p1" layoutX="75.0" layoutY="125.0" prefHeight="45.0" prefWidth="76.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0" text="Player 1:" textFill="#ffba1a">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
@@ -23,29 +28,29 @@
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Text fill="#ffba1a" layoutX="113.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Righteous; -fx-font-size: 32.0" text="Players, enter your names!">
-         <font>
-            <Font name="Comic Sans MS" size="32.0" />
-         </font>
-      </Text>
       <TextField fx:id="playerName2" layoutX="154.0" layoutY="199.0" prefHeight="39.0" prefWidth="332.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #010a33; -fx-border-color: #ffba1a; -fx-text-fill: #ffba1a;">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="btnSubmit" layoutX="176.0" layoutY="321.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="45.0" prefWidth="114.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;" text="Let's roll!" textFill="#150e5c">
+      <Button fx:id="btnSubmit" layoutX="119.0" layoutY="321.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="45.0" prefWidth="114.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;  -fx-skin: 'app.domain.MyButtonSkin';" text="Play" textFill="#150e5c">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font></Button>
+      <Button fx:id="btnRules" layoutX="241.0" layoutY="321.0" mnemonicParsing="false" onAction="#onRulesClicked" prefHeight="45.0" prefWidth="114.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;  -fx-skin: 'app.domain.MyButtonSkin';" text="Rules" textFill="#150e5c">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="363.0" layoutY="321.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="45.0" prefWidth="114.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;  -fx-skin: 'app.domain.MyButtonSkin';" text="Back" textFill="#150e5c">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Button>
       <Label alignment="CENTER" layoutX="233.0" layoutY="266.0" prefHeight="45.0" prefWidth="130.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0" text="Max score: 50" textFill="#ffba1a">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="320.0" layoutY="321.0" mnemonicParsing="false" onAction="#onBackClicked" prefHeight="45.0" prefWidth="114.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a;" text="Back" textFill="#150e5c">
-         <font>
-            <Font name="Comic Sans MS" size="18.0" />
-         </font>
-      </Button>
    </children>
 </Pane>

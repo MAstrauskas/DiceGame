@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.app.model.DicePageController">
+    <top>
+        <Pane prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="playerTurn" alignment="CENTER" prefHeight="80.0" prefWidth="600.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #010a33;" text="Player 1,&#10;press the button to start!" textAlignment="CENTER" textFill="#ffba1a">
+                    <font>
+                        <Font name="Comic Sans MS" size="24.0" />
+                    </font>
+                </Label>
+            <Button fx:id="btn_Back" layoutX="35.0" layoutY="26.0" mnemonicParsing="false" onAction="#backClicked" prefHeight="29.0" prefWidth="74.0" style="-fx-font-family: Righteous; -fx-font-size: 12; -fx-background-color: #ffba1a; -fx-skin: 'main.app.domain.MyButtonSkin';" text="Back" textFill="#150e5c">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Button>
+            </children>
+        </Pane>
+    </top>
+    <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="rollButton" layoutX="95.0" layoutY="250.0" mnemonicParsing="false" onAction="#rollButtonClicked" prefHeight="43.0" prefWidth="91.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #ffba1a; -fx-skin: 'main.app.domain.MyButtonSkin';" text="Roll!" textFill="#150e5c">
+                    <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                    </font>
+                </Button>
+            <ImageView fx:id="diceSide1" fitHeight="53.0" fitWidth="66.0" layoutX="37.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="diceSide2" fitHeight="53.0" fitWidth="66.0" layoutX="119.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="diceSide3" fitHeight="53.0" fitWidth="66.0" layoutX="197.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            </children>
+        </Pane>
+    </center>
+   <right>
+      <VBox prefHeight="320.0" prefWidth="162.0" style="-fx-border-color: #ffba1a;" BorderPane.alignment="CENTER">
+         <children>
+                  <Label fx:id="PlayerTwo" alignment="CENTER" prefHeight="38.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #010a33; -fx-border-color: #ffba1a;" text="Label" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="18.0" />
+                      </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 1 1 0 1;" text="Current score" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label fx:id="p2_currentScore" alignment="CENTER" prefHeight="31.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 0 1 1 1;" text="0" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 1 1 0 1;" text="Total score" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label fx:id="p2_totalScore" alignment="CENTER" prefHeight="31.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 0 1 2 1;" text="0" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+            <Label fx:id="PlayerTwoLeading" alignment="CENTER" prefHeight="129.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-rotate: -40;" textAlignment="CENTER" textFill="#ffba1a">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="320.0" prefWidth="162.0" style="-fx-border-color: #ffba1a;" BorderPane.alignment="CENTER">
+         <children>
+                  <Label fx:id="PlayerOne" alignment="CENTER" prefHeight="38.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-background-color: #010a33; -fx-border-color: #ffba1a;" text="Label" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="18.0" />
+                      </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 1 1 0 1;" text="Current score" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label fx:id="p1_currentScore" alignment="CENTER" prefHeight="31.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 0 1 1 1;" text="0" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 1 1 0 1;" text="Total score" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+                  <Label fx:id="p1_totalScore" alignment="CENTER" prefHeight="31.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 14.0; -fx-border-color: #ffba1a; -fx-border-width: 0 1 2 1;" text="0" textAlignment="CENTER" textFill="#ffba1a">
+                      <font>
+                          <Font name="Comic Sans MS" size="14.0" />
+                      </font>
+                  </Label>
+            <Label fx:id="PlayerOneLeading" alignment="CENTER" prefHeight="129.0" prefWidth="162.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0; -fx-rotate: -40;" textAlignment="CENTER" textFill="#ffba1a">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

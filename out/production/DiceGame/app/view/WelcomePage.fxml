@@ -13,16 +13,13 @@
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.model.WelcomePageController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="693.0" layoutX="-37.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/BackgroundImg.jpg" />
-         </image>
       </ImageView>
       <Text fill="#ffba1a" layoutX="166.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Righteous" text="Welcome to the&#10;DiceMania!" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="btnSubmit" layoutX="249.0" layoutY="294.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0" text="Begin!" textFill="#150e5c">
+      <Button fx:id="btnSubmit" layoutX="249.0" layoutY="294.0" mnemonicParsing="false" onAction="#onSubmitClicked" prefHeight="33.0" prefWidth="90.0" style="-fx-background-color: #ffba1a; -fx-font-family: Righteous; -fx-font-size: 18.0;  -fx-skin: 'app.domain.MyButtonSkin';" text="Begin!" textFill="#150e5c">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font></Button>

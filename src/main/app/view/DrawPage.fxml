@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #010a33;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.app.model.DrawPageController">
+    <children>
+        <Pane prefHeight="401.0" prefWidth="601.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="13.0" prefHeight="222.0" prefWidth="471.0" style="-fx-font-family: Righteous; -fx-font-size: 48.0" text="Oh, look! &#10;It's a draw!" textAlignment="CENTER" textFill="#ffba1a">
+                    <font>
+                        <Font name="Comic Sans MS" size="64.0" />
+                    </font>
+                </Label>
+                <Button layoutX="104.0" layoutY="300.0" mnemonicParsing="false" onAction="#onPlayAgainClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;  -fx-skin: 'main.app.domain.MyButtonSkin';" text="Play again" textFill="#150e5c">
+                    <font>
+                        <Font name="Comic Sans MS" size="24.0" />
+                    </font>
+                </Button>
+                <Button layoutX="326.0" layoutY="300.0" mnemonicParsing="false" onAction="#onMainMenuClicked" prefHeight="63.0" prefWidth="155.0" style="-fx-font-family: Righteous; -fx-font-size: 24.0; -fx-background-color: #ffba1a;  -fx-skin: 'main.app.domain.MyButtonSkin';" text="Main menu" textFill="#150e5c">
+                    <font>
+                        <Font name="Comic Sans MS" size="24.0" />
+                    </font>
+                </Button>
+                <Label fx:id="playerOneNameScore" alignment="CENTER_RIGHT" layoutX="96.0" layoutY="223.0" prefHeight="40.0" prefWidth="205.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="p1 score: " textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerTwoNameScore" alignment="CENTER_RIGHT" layoutX="96.0" layoutY="260.0" prefHeight="40.0" prefWidth="205.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="p2 score: " textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerOneScore" layoutX="307.0" layoutY="223.0" prefHeight="40.0" prefWidth="61.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="score" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerTwoScore" layoutX="307.0" layoutY="260.0" prefHeight="40.0" prefWidth="61.0" style="-fx-font-family: Righteous; -fx-font-size: 18.0;" text="score" textAlignment="CENTER" textFill="#ffba1a" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+    </children>
+</FlowPane>
