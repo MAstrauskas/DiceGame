@@ -1,3 +1,3 @@
-# DiceGame
+# DiceMania
 
-It is a basic dice throwing game done as an assignment for User Interface and HCI module at the University.
+It is a simple Dice Throwing desktop game developed using Java and JavaFX.
